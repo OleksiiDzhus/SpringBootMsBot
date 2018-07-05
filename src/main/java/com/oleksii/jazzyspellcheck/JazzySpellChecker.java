@@ -1,13 +1,5 @@
 package com.oleksii.jazzyspellcheck;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-
-
-
 import com.swabunga.spell.engine.SpellDictionaryHashMap;
 import com.swabunga.spell.engine.Word;
 import com.swabunga.spell.event.SpellCheckEvent;
@@ -15,21 +7,27 @@ import com.swabunga.spell.event.SpellCheckListener;
 import com.swabunga.spell.event.SpellChecker;
 import com.swabunga.spell.event.StringWordTokenizer;
 import com.swabunga.spell.event.TeXWordFinder;
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class JazzySpellChecker implements SpellCheckListener {
 
-  private SpellChecker spellChecker;
-  private List<String> misspelledWords;
   private static SpellDictionaryHashMap dictionaryHashMap;
 
   static {
-    File dictionary = new File("dictionary.txt");
+    File dictionary = new File(
+        "C:\\Users\\oleks\\workspace\\spring-bot\\src\\main\\resources\\dictionary.txt");
     try {
       dictionaryHashMap = new SpellDictionaryHashMap(dictionary);
     } catch (IOException e) {
       e.printStackTrace();
     }
   }
+
+  private SpellChecker spellChecker;
+  private List<String> misspelledWords;
 
   public JazzySpellChecker() {
     misspelledWords = new ArrayList<>();
@@ -49,8 +47,9 @@ public class JazzySpellChecker implements SpellCheckListener {
 
     for (String misSpelledWord : misSpelledWords) {
       List<String> suggestions = getSuggestions(misSpelledWord);
-      if (suggestions.size() == 0)
+      if (suggestions.size() == 0) {
         continue;
+      }
       String bestSuggestion = suggestions.get(0);
       line = line.replace(misSpelledWord, bestSuggestion);
     }
@@ -67,8 +66,9 @@ public class JazzySpellChecker implements SpellCheckListener {
         List<Word> suggestions = spellChecker.getSuggestions(tempWord, 0);
         if (suggestions.size() > 0) {
           builder.append(spellChecker.getSuggestions(tempWord, 0).get(0).toString());
-        } else
+        } else {
           builder.append(tempWord);
+        }
       } else {
         builder.append(tempWord);
       }
