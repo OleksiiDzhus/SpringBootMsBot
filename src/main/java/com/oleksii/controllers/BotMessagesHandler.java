@@ -1,4 +1,4 @@
-package com.oleksii;
+package com.oleksii.controllers;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.datatype.joda.deser.DateTimeDeserializer;

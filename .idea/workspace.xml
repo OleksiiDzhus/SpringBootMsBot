@@ -56,7 +56,7 @@
       <file leaf-file-name="JazzySpellChecker.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/oleksii/jazzyspellcheck/JazzySpellChecker.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
+            <state relative-caret-position="-261">
               <caret line="61" selection-start-line="61" selection-end-line="61" />
             </state>
           </provider>
@@ -111,7 +111,7 @@
   <component name="MavenRunner">
     <option name="jreName" value="1.8" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="785" />
     <option name="y" value="35" />
     <option name="width" value="980" />
@@ -320,16 +320,15 @@
       <updated>1530779851391</updated>
       <workItem from="1530779860642" duration="23703000" />
       <workItem from="1530830174417" duration="278000" />
-      <workItem from="1530852093017" duration="631000" />
+      <workItem from="1530852093017" duration="873000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25191000" />
+    <option name="totallyTimeSpent" value="25433000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="PlantUML" order="5" />
       <window_info anchor="right" id="Palette" order="5" />
@@ -352,10 +351,10 @@
       <window_info anchor="bottom" id="Java Enterprise" order="9" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32592592" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32592592" />
       <window_info anchor="bottom" id="Spring" order="9" />
       <window_info anchor="bottom" id="CheckStyle" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32592592" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.32592592" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2804054" />
       <window_info anchor="right" id="Bean Validation" order="5" />
       <window_info id="Web" order="4" side_tool="true" />
@@ -655,7 +654,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/oleksii/jazzyspellcheck/JazzySpellChecker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
+        <state relative-caret-position="-261">
           <caret line="61" selection-start-line="61" selection-end-line="61" />
         </state>
       </provider>
