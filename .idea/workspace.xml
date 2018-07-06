@@ -3,15 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="606145d5-cefa-481a-82da-0a5aeca38e45" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/oleksii/BotMessagesHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oleksii/BotMessagesHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/oleksii/config/BotConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oleksii/config/BotConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/oleksii/App.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/oleksii/BotMessagesHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/oleksii/config/BotConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/oleksii/creator/ActivityCreator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/oleksii/creator/ConversationCreator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/oleksii/jazzyspellcheck/JazzySpellChecker.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/oleksii/sender/ResourceResponseSender.class" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -34,9 +26,10 @@
       <file leaf-file-name="BotConfig.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/oleksii/config/BotConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="333">
-              <caret line="23" column="7" selection-start-line="23" selection-start-column="7" selection-end-line="23" selection-end-column="7" />
+            <state relative-caret-position="355">
+              <caret line="28" lean-forward="true" selection-start-line="2" selection-end-line="28" />
               <folding>
+                <element signature="imports" expanded="true" />
                 <element signature="e#765#766#0" expanded="true" />
                 <element signature="e#784#785#0" expanded="true" />
               </folding>
@@ -44,20 +37,32 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BotMessagesHandler.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/oleksii/BotMessagesHandler.java">
+      <file leaf-file-name="BotMessagesHandler.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/oleksii/controllers/BotMessagesHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="355">
-              <caret line="47" column="38" selection-start-line="47" selection-start-column="38" selection-end-line="47" selection-end-column="38" />
+            <state relative-caret-position="-151">
+              <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="JazzySpellChecker.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="JazzySpellChecker.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/oleksii/jazzyspellcheck/JazzySpellChecker.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-261">
               <caret line="61" selection-start-line="61" selection-end-line="61" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ResourceResponseSender.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/oleksii/sender/ResourceResponseSender.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3">
+              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -111,7 +116,7 @@
   <component name="MavenRunner">
     <option name="jreName" value="1.8" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="785" />
     <option name="y" value="35" />
     <option name="width" value="980" />
@@ -177,6 +182,16 @@
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="oleksii" type="462c0819:PsiDirectoryNode" />
               <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="spring-bot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spring-bot" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="oleksii" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="spring-bot" type="b2602c69:ProjectViewProjectNode" />
@@ -256,7 +271,7 @@
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.oleksii.*" />
+          <option name="PATTERN" value="com.oleksii.controllers.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -320,12 +335,12 @@
       <updated>1530779851391</updated>
       <workItem from="1530779860642" duration="23703000" />
       <workItem from="1530830174417" duration="278000" />
-      <workItem from="1530852093017" duration="873000" />
+      <workItem from="1530852093017" duration="1716000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25433000" />
+    <option name="totallyTimeSpent" value="26276000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -401,7 +416,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/oleksii/jazzyspellcheck/JazzySpellChecker.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/oleksii/sender/ResourceResponseSender.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/oleksii/config/BotConfig.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/oleksii/BotMessagesHandler.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oleksii/controllers/BotMessagesHandler.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/oleksii/App.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/oleksii/creator/ConversationCreator.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/oleksii/creator/ActivityCreator.java" />
@@ -502,7 +517,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/oleksii/BotMessagesHandler.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oleksii/controllers/BotMessagesHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="333">
           <caret line="39" column="1" lean-forward="true" selection-start-line="39" selection-start-column="1" selection-end-line="39" selection-end-column="1" />
@@ -606,13 +621,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/oleksii/sender/ResourceResponseSender.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="20" lean-forward="true" selection-start-line="2" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/oleksii/App.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="242">
@@ -634,28 +642,39 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oleksii/jazzyspellcheck/JazzySpellChecker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-261">
+          <caret line="61" selection-start-line="61" selection-end-line="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oleksii/sender/ResourceResponseSender.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/oleksii/config/BotConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="23" column="7" selection-start-line="23" selection-start-column="7" selection-end-line="23" selection-end-column="7" />
+        <state relative-caret-position="355">
+          <caret line="28" lean-forward="true" selection-start-line="2" selection-end-line="28" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="e#765#766#0" expanded="true" />
             <element signature="e#784#785#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/oleksii/BotMessagesHandler.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oleksii/controllers/BotMessagesHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="47" column="38" selection-start-line="47" selection-start-column="38" selection-end-line="47" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/oleksii/jazzyspellcheck/JazzySpellChecker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-261">
-          <caret line="61" selection-start-line="61" selection-end-line="61" />
+        <state relative-caret-position="-151">
+          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

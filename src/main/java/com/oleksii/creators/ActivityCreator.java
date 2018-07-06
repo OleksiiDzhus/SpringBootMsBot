@@ -1,4 +1,4 @@
-package com.oleksii.creator;
+package com.oleksii.creators;
 
 import com.microsoft.bot.schema.models.Activity;
 import com.microsoft.bot.schema.models.ActivityTypes;

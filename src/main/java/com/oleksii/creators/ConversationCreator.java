@@ -1,4 +1,4 @@
-package com.oleksii.creator;
+package com.oleksii.creators;
 
 import com.microsoft.bot.connector.ConnectorClient;
 import com.microsoft.bot.connector.Conversations;

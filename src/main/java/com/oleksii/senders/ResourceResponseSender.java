@@ -1,4 +1,4 @@
-package com.oleksii.sender;
+package com.oleksii.senders;
 
 import com.microsoft.bot.connector.Conversations;
 import com.microsoft.bot.schema.models.Activity;
