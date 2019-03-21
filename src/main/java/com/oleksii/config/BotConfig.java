@@ -1,28 +1,36 @@
 package com.oleksii.config;
 
+import com.microsoft.bot.connector.ConnectorClient;
 import com.microsoft.bot.connector.customizations.MicrosoftAppCredentials;
 import com.microsoft.bot.schema.models.ResourceResponse;
-import java.util.ArrayList;
-import java.util.List;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.core.env.Environment;
+import org.springframework.core.io.ClassPathResource;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Configuration
 public class BotConfig {
+  @Value("${bot.appId}")
+  private String botAppId;
 
-  @Autowired
-  private Environment environment;
+  @Value("${bot.appPassword}")
+  private String botAppPassword;
 
-  @Bean(name = "credentials")
+  @Bean
   public MicrosoftAppCredentials getCredentials() {
-    return new MicrosoftAppCredentials(environment.getProperty("bot.appId"),
-        environment.getProperty("bot.appPassword"));
+    return new MicrosoftAppCredentials(botAppId, botAppPassword);
   }
 
   @Bean
-  public List<ResourceResponse> getResponses(){
+  public List<ResourceResponse> getResponses() {
     return new ArrayList<>();
+  }
+
+  @Bean
+  public ClassPathResource getDictionary(){
+    return new ClassPathResource("dictionary.txt");
   }
 }

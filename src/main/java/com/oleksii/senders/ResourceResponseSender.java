@@ -8,13 +8,13 @@ import org.springframework.stereotype.Component;
 @Component
 public class ResourceResponseSender {
 
-  private ResourceResponseSender(){
+  private ResourceResponseSender() {
 
   }
 
-  public static ResourceResponse send(Conversations conversations,
-      Activity requestActivity, Activity responseActivity) {
+  public ResourceResponse send(Conversations conversations,
+                               Activity requestActivity, Activity responseActivity) {
     return conversations.
-        sendToConversation(requestActivity.conversation().id(), responseActivity);
+            sendToConversation(requestActivity.conversation().id(), responseActivity);
   }
 }

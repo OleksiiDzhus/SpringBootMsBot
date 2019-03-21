@@ -2,44 +2,37 @@ package com.oleksii.jazzyspellcheck;
 
 import com.swabunga.spell.engine.SpellDictionaryHashMap;
 import com.swabunga.spell.engine.Word;
-import com.swabunga.spell.event.SpellCheckEvent;
-import com.swabunga.spell.event.SpellCheckListener;
-import com.swabunga.spell.event.SpellChecker;
-import com.swabunga.spell.event.StringWordTokenizer;
-import com.swabunga.spell.event.TeXWordFinder;
+import com.swabunga.spell.event.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.stereotype.Component;
+
+import javax.annotation.PostConstruct;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
+@Component
 public class JazzySpellChecker implements SpellCheckListener {
-
-  private static SpellDictionaryHashMap dictionaryHashMap;
-
-  static {
-    File dictionary = new File(
-        "C:\\Users\\oleks\\workspace\\spring-bot\\src\\main\\resources\\dictionary.txt");
-    try {
-      dictionaryHashMap = new SpellDictionaryHashMap(dictionary);
-    } catch (IOException e) {
-      e.printStackTrace();
-    }
-  }
 
   private SpellChecker spellChecker;
   private List<String> misspelledWords;
 
-  public JazzySpellChecker() {
-    misspelledWords = new ArrayList<>();
-    spellChecker = new SpellChecker(dictionaryHashMap);
-    spellChecker.addSpellCheckListener(this);
-  }
+  @Autowired
+  private ClassPathResource dictionaryResource;
 
-  public List<String> getMisspelledWords(String text) {
-    StringWordTokenizer texTok = new StringWordTokenizer(text,
-        new TeXWordFinder());
-    spellChecker.checkSpelling(texTok);
-    return misspelledWords;
+  @PostConstruct
+  private void init() {
+    try {
+      File dictionary = dictionaryResource.getFile();
+      spellChecker = new SpellChecker(new SpellDictionaryHashMap(dictionary));
+      misspelledWords = new ArrayList<>();
+      spellChecker.addSpellCheckListener(this);
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
   }
 
   public String getCorrectedLine(String line) {
@@ -78,19 +71,24 @@ public class JazzySpellChecker implements SpellCheckListener {
     return builder.toString().trim();
   }
 
-  public List<String> getSuggestions(String misspelledWord) {
-
-    @SuppressWarnings("unchecked")
-    List<Word> suggestedWords = spellChecker.getSuggestions(misspelledWord, 0);
-    List<String> suggestions = new ArrayList<>();
-
-    suggestedWords.forEach(i -> suggestions.add(i.getWord()));
-
-    return suggestions;
-  }
 
   public void spellingError(SpellCheckEvent event) {
     event.ignoreWord(true);
     misspelledWords.add(event.getInvalidWord());
+  }
+
+  private List<String> getMisspelledWords(String text) {
+    StringWordTokenizer texTok = new StringWordTokenizer(text,
+            new TeXWordFinder());
+    spellChecker.checkSpelling(texTok);
+    return misspelledWords;
+  }
+
+  private List<String> getSuggestions(String misspelledWord) {
+    @SuppressWarnings("unchecked")
+    List<Word> suggestedWords = spellChecker.getSuggestions(misspelledWord, 0);
+
+    return suggestedWords.stream().map(Word::getWord).collect(Collectors.toList());
+
   }
 }

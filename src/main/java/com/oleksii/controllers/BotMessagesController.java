@@ -11,40 +11,49 @@ import com.microsoft.bot.schema.models.ResourceResponse;
 import com.oleksii.creators.ActivityCreator;
 import com.oleksii.creators.ConversationCreator;
 import com.oleksii.senders.ResourceResponseSender;
-import java.util.List;
-import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.Valid;
+import java.util.List;
+
 @RestController
 @RequestMapping(path = "/api/messages")
-public class BotMessagesHandler {
+public class BotMessagesController {
+
+  private final MicrosoftAppCredentials credentials;
+  private final List<ResourceResponse> responses;
+  private final ActivityCreator activityCreator;
+  private final ResourceResponseSender sender;
 
   @Autowired
-  private MicrosoftAppCredentials credentials;
-
-  @Autowired
-  private List<ResourceResponse> responses;
+  public BotMessagesController(MicrosoftAppCredentials credentials, List<ResourceResponse> responses,
+                               ActivityCreator activityCreator, ResourceResponseSender sender) {
+    this.credentials = credentials;
+    this.responses = responses;
+    this.activityCreator = activityCreator;
+    this.sender = sender;
+  }
 
   @PostMapping(path = "")
   public List<ResourceResponse> create(@RequestBody @Valid
-  @JsonDeserialize(using = DateTimeDeserializer.class) Activity activity) {
+                                       @JsonDeserialize(using = DateTimeDeserializer.class) Activity activity) {
     ConnectorClient connector =
-        new ConnectorClientImpl(activity.serviceUrl(), credentials);
+            new ConnectorClientImpl(activity.serviceUrl(), credentials);
 
-    Activity echoActivity = ActivityCreator.createEchoActivity(activity);
-    Activity checkedActivity = ActivityCreator.createSpellCheckedActivity(activity);
+    Activity echoActivity = activityCreator.createEchoActivity(activity);
+    Activity checkedActivity = activityCreator.createSpellCheckedActivity(activity);
     Conversations conversation = ConversationCreator.createResponseConversation(connector);
 
     ResourceResponse echoResponse =
-        ResourceResponseSender.send(conversation, activity, echoActivity);
+            sender.send(conversation, activity, echoActivity);
     responses.add(echoResponse);
 
     ResourceResponse spellCheckedResponse =
-        ResourceResponseSender.send(conversation, activity, checkedActivity);
+            sender.send(conversation, activity, checkedActivity);
     responses.add(spellCheckedResponse);
 
     return responses;
